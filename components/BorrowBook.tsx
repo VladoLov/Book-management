@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "@/hooks/use-toast";
-import { title } from "process";
+
 import { borrowBook } from "@/lib/actions/book";
 
 interface Props {
@@ -40,7 +40,8 @@ export default function BorrowBook({
           title: "Success",
           description: "Book borrowed successfully",
         });
-        router.push("/my-profile");
+        /*   router.push("/my-profile"); */
+        router.push("/");
       } else {
         toast({
           title: "Error",
@@ -48,6 +49,7 @@ export default function BorrowBook({
           variant: "destructive",
         });
       }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast({
         title: "Error",
